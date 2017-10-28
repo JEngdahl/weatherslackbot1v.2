@@ -16,7 +16,9 @@ app.get('/', function(req, res){
 })
 
 app.post('/getweather', function(req, response){
-
+  if(req.body.text.length < 1){
+    response.send("needs a zip-code :D")
+  }
   //http://api.apixu.com/v1/current.json?key=488d3421779b4d6ebd6210605172810&q=33523
 
   // cheeseBurger.get("http://api.apixu.com/v1/current.json?key=488d3421779b4d6ebd6210605172810&q=33523")
