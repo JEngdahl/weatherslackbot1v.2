@@ -32,7 +32,7 @@ var options = {
   "method": "GET",
   "hostname": "api.apixu.com",
   "port": null,
-  "path": `/v1/current.json?key=488d3421779b4d6ebd6210605172810&q=${req.body.text}`,
+  "path": `/v1/current.json?key=488d3421779b4d6ebd6210605172810&q=${req.body.text || "33523"}`,
   "headers": {
     "cache-control": "no-cache",
   }
