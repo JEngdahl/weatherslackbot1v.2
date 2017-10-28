@@ -18,7 +18,11 @@ app.get('/', function(req, res){
 app.post('/getweather', function(req, response){
 
   if(req.body.text.length !== 5){
-    return response.send("needs a zip-code :D")
+    return response.send("needs a 5 digit zip-code :D")
+  }
+
+  if(isNaN(req.body.text)){
+    return response.send("needs a 5 digit zip-code :D")
   }
 
   // if(req.body.text.length < 1){
