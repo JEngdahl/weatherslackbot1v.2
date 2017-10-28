@@ -27,7 +27,6 @@ app.post('/getweather', function(req, response){
   //   res.send(response.location)
   // })
 
-
 var options = {
   "method": "GET",
   "hostname": "api.apixu.com",
@@ -49,17 +48,16 @@ var req = http.request(options, function (res) {
     var body = Buffer.concat(chunks);
     // response.send(body)
     // console.log(body.toString());
+    body = JSON.parse(body)
 
-    console.log(body)
-
-    //response.send(`It is currently ${body.current.temp_f} degrees in ${body.location.name}`)
-
-    response.send(body)
+    var text = `It is currently ${body.current.temp_f} degrees in ${body.location.name}`
+    response.send(text)
 
   });
 })
 
 req.end();
+
 
 
 
