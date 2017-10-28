@@ -49,6 +49,9 @@ var req = http.request(options, function (res) {
     var body = Buffer.concat(chunks);
     // response.send(body)
     // console.log(body.toString());
+
+    console.log(body.current)
+
     response.send(`It is currently ${body.current.temp_f} degrees in ${body.location.name}`)
 
 
