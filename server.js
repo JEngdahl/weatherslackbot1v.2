@@ -50,14 +50,14 @@ var req = http.request(options, function (res) {
     // response.send(body)
     // console.log(body.toString());
 
-    console.log(body.current)
+    console.log(body)
 
-    response.send(`It is currently ${body.current.temp_f} degrees in ${body.location.name}`)
+    //response.send(`It is currently ${body.current.temp_f} degrees in ${body.location.name}`)
 
-
+    response.send(body)
 
   });
-});
+})
 
 req.end();
 
